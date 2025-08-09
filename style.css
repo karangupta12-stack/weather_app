@@ -97,8 +97,8 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    max-width: 1200px;
+    gap: 80px;
+    max-width: 1400px;
     width: 100%;
 }
 
@@ -106,8 +106,8 @@ body::before {
 .hero {
     text-align: left;
     flex: 1;
-    max-width: 500px;
-    padding: 30px 0;
+    max-width: 550px;
+    padding: 40px 0;
     animation: heroFadeIn 1.2s ease-out;
     position: relative;
 }
@@ -124,18 +124,19 @@ body::before {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 800;
     color: #fff;
-    margin: 0 0 15px 0;
+    margin: 0 0 18px 0;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     background: linear-gradient(135deg, #ffffff 0%, #8a2be2 30%, #1e90ff 70%, #00ffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
     animation: heroTitleGlow 4s ease-in-out infinite;
     position: relative;
+    line-height: 1.1;
 }
 
 @keyframes heroTitleGlow {
@@ -174,7 +175,7 @@ body::before {
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
@@ -703,77 +704,176 @@ body::before {
     }
 }
 
-@media (max-width: 320px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
     .main-container {
-        gap: 20px;
+        gap: 50px;
+        max-width: 1000px;
     }
     
     .hero {
-        padding: 20px 15px;
+        max-width: 450px;
     }
     
     .hero h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
+        font-size: 46px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .hero {
+        text-align: center;
+        max-width: 100%;
+        order: 1;
+    }
+    
+    .card {
+        order: 2;
+        max-width: 420px;
+    }
+    
+    .hero::after {
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(90deg, transparent, rgba(30, 144, 255, 0.8), transparent);
+    }
+    
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 16px;
+    }
+    
+    .hero p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .main-container {
+        gap: 30px;
+    }
+    
+    .hero {
+        padding: 25px 15px;
+        order: 1;
+    }
+    
+    .card {
+        order: 2;
+        padding: 35px 28px;
+        max-width: 100%;
+        border-radius: 24px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 12px;
+        letter-spacing: -0.8px;
+        line-height: 1.2;
     }
     
     .hero p {
         font-size: 15px;
-        line-height: 1.4;
-    }
-    
-    .card {
-        padding: 30px 22px;
-        border-radius: 20px;
+        line-height: 1.5;
+        letter-spacing: 0.3px;
     }
     
     .search {
-        gap: 10px;
+        flex-direction: row;
+        gap: 12px;
+        margin-bottom: 30px;
     }
     
     .search input {
-        height: 50px;
-        padding: 14px 18px;
-        font-size: 14px;
+        padding: 16px 20px;
+        height: 55px;
+        font-size: 15px;
+        border-radius: 25px;
     }
     
     .search button {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
+        border-radius: 25px;
+        flex-shrink: 0;
     }
     
-    .temp {
-        font-size: 58px;
-    }
-    
-    .city {
-        font-size: 24px;
+    .search button img {
+        width: 18px;
+        height: 18px;
     }
     
     .weather-icon {
-        width: 130px;
-        height: 130px;
+        width: 150px;
+        height: 150px;
+        margin: 20px auto 30px;
+    }
+    
+    .temp {
+        font-size: 68px;
+        margin-bottom: 12px;
+        letter-spacing: -1px;
+    }
+    
+    .city {
+        font-size: 26px;
+        margin: 0 0 35px 0;
+        letter-spacing: 0.5px;
     }
     
     .details {
-        gap: 10px;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 30px;
+        justify-content: space-between;
     }
     
     .col {
-        padding: 16px 10px;
+        flex: 1;
+        min-width: auto;
+        padding: 18px 12px;
+        border-radius: 18px;
     }
     
     .col img {
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
+        margin: 0 0 10px 0;
     }
     
     .humidity, .wind {
-        font-size: 20px;
+        font-size: 22px;
+        margin-bottom: 6px;
     }
     
     .col p:last-child {
-        font-size: 11px;
+        font-size: 12px;
+        letter-spacing: 0.8px;
+    }
+    
+    .error {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    
+    .error p {
+        padding: 14px 18px;
+        font-size: 14px;
+        border-radius: 18px;
     }
 }
 
