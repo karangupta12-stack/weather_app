@@ -722,7 +722,7 @@ body::before {
 
 @media (max-width: 480px) {
     body {
-        padding: 12px;
+        padding: 25px;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
